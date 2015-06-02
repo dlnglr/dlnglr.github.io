@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Unser Projekt</title>
+    <title>MusicVis</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -57,7 +57,7 @@
                         <a href="scenario.html">Scenario</a>
                     </li>
                     <li>
-                        <a href="implementation.html">Implementation</a>
+                        <a href="implementation.html">What's Next</a>
                     </li>
                     <li>
                         <a href="milestones.html">Milestones</a>
@@ -82,11 +82,90 @@
                 <br></br>
                 <p>
                  
-            Unser Anwendung „MusicVis“ ist für DJs gedacht, die auf der ganzen Welt auftreten und auch in Onlineradios spielen.
-            <p>Sie können ihr Programm je nach Beliebtheit der Genres und auch songs in dem jeweiligen Land anpassen und somit auch die passenden Artist heraussuchen.</p> 
-            <p>Unser Ziel ist es, eine Anwendung zu erstellen, die dem Dj mit wenigen Klicks einfache Statistiken anschauen lässt. Dementsprechend kann er seine Auftritte optimieren 
-            und dem Erfolg steht nichts mehr im Wege. </p> 
+         
             
+<h3><b>Überblick</b></h3>
+
+
+<p>Unsere Anwendung „MusicVis“ ist für DJs gedacht, die in verschiedenen Ländern 
+auf der ganzen Welt auftreten und/oder auch in Onlineradios spielen. </p>
+<p>
+Mithilfe des Tools kann ein DJ sein Programm beispielsweise je nach Beliebtheit 
+der Genres in dem jeweiligen Land anpassen und auch gleich dazu passende Artists finden. </p>
+
+<p>Doch das ist nur ein Teil der möglichen Anwendungsfälle – mehr dazu unter Szenarios.</p>
+
+<p>Nach einer längeren Recherche sind wir zu dem Schluss gekommen, dass es so 
+ein Tool noch nicht gibt. Natürlich braucht jemand der seine eigenen Songs spielt 
+all die im Tool verpackten Informationen nicht. Trifft das aber nicht zu, dann 
+kann man als DJ aufgrund der Vielfalt an Genres schon mal schnell den Überblick 
+verlieren und so manchen coolen Song vielleicht sogar vergessen.</p>
+
+<p>Unser Ziel ist es, eine Anwendung zu erstellen, die dem DJ mit wenigen Klicks 
+einen klaren Überblick verschafft. Ohne viel Zeit zu investieren soll man gleich 
+passende Genres, Artists oder Songs finden. Dementsprechend kann ein DJ 
+dann seine Auftritte etwa an eine gewisse Zielgruppe optimieren und dann 
+vielleicht mehr Leute erreichen.</p>
+
+<h3><b>Daten</b></h3>
+
+<p>Für das Tool verwenden wir einen Teil der „Millionsong“ Daten von 
+http://labrosa.ee.columbia.edu/millionsong/pages/getting-dataset. Wir haben 
+uns aus allen verfügbaren Datenschnipseln und der SQLite Datenbank ein CSV-
+File mit ca. 250.000 Einträgen erstellt um möglichst realistische Ergebnisse zu 
+erzielen. Wenn wir zu wenige Daten verwenden sieht man bei den 
+Visualisierungen wohlmöglich fast keine Veränderungen und bei zu vielen Daten 
+werden die Visualisierungen zu langsam.</p>
+
+<h3><b>Implementation</b></h3>
+<p>
+Für die Realisierung unseres Projektes haben wir uns für Tableau entschieden, wir hier durch ein paar Klicks visuell ansprechende, interaktive Dashboards 
+erstellen und diese anschließend im Web dynamisch darstellen können. Hierbei 
+haben wir als Werkzeug verschiedene Arten der Filterung verwendet, um dem 
+Benutzer die Möglichkeit zu geben den Wertebereich individuell eingrenzen zu 
+können. Das ist auch bei der Größe der Daten unbedingt notwendig.</p>
+
+<h3><b>Update/Verbesserungen zu M2</b></h3>
+
+
+<p>Eines der Hauptprobleme bei der Präsentation des vorigen Meilensteins war, dass 
+wir unsere Anforderungen bzw. unsere User zu schwammig definiert haben. Wir 
+haben uns nochmal zusammengesetzt und geklärt was wir wirklich für wen und 
+warum entwickeln wollen. So sind wir vom musikinteressierten 
+Durchschnittsbürger zum herumreisenden (Online-) DJ gekommen und haben 
+somit dem User eine Gestalt verliehen.</p>
+
+<p>Mit der genaueren Definition unseres Users haben sich natürlich auch die Ideen 
+der tatsächlichen Visualisierungen besser entwickelt. So können wir jetzt besser 
+entscheiden was wirklich zählt, anstatt einfach drauf los zu entwickeln.</p>
+
+<p>Ein weiterer Punkt ist der Datensatz. Anfangs haben wir nur das „cleaned subset“ 
+mit rund 80.000 Einträgen verwendet. Wir haben sehr schnell gemerkt, dass in 
+diesem subset zu wenige, für unser Projekt passende, Daten vorhanden sind. 
+Beispielsweise gab es hier keine Artists oder Geo-Daten und diese nehmen aber 
+in unserem Tool eine wichtige Rolle ein. Außerdem konnten wir beobachten, dass 
+man mit 80.000 Einträgen weniger auf die Skalierbarkeit oder die Performance 
+der Visualisierung achten muss. Es macht einen großen Unterschied ob ich 
+80.000, 250.000 oder mehr Daten habe.</p>
+
+<h3><b>Probleme</b></h3>
+
+
+<p>Die meisten Probleme hatten wir vor allem beim Finden/Zusammenfügen der 
+passenden  Daten. Nachdem wir unseren User richtig definiert haben war 
+plötzlich das „cleaned subset“ nämlich nicht mehr geeignet. Daraufhin haben wir 
+uns wie bereits erwähnt einen neuen Datensatz aus vielen verschiedenen Daten 
+vom Millionsong Projekt zusammengesetzt. Das war aufgrund teilweise fehlender 
+Kategorien wie Genre oder Listener recht problematisch. Immerhin wollten wir 
+zunächst, dass alle Daten genau zusammenpassen. Im Endeffekt haben wir bei 
+Genre nicht zu allen Einträgen passende Daten gefunden und hier stellenweise 
+bereits vorhandene Genres an unser File drangehängt. Das führt manchmal zu 
+eigenartigen Ergebnissen bei der Visualisierung, aber für uns geht es in diesem 
+Projekt mehr um das „wie visualisieren wir“ anstatt um hundertprozentig 
+zusammenpassende Daten.</p>
+
+<p>Weitere kleinere Probleme haben wir sonst nur bei manchen Verknüpfungen in 
+Tableau.</p>
                         
                 
  </p>
